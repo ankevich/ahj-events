@@ -19,4 +19,4 @@ setInterval(() => {
   }
 
   cells[randomCell].classList.add("goblin");
-}, 1000);
+}, 100000);

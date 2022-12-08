@@ -1,9 +1,8 @@
-//создаем переменную для хранения количества очков
+// создаем переменную для хранения количества очков
 const cells = document.querySelectorAll(".cell");
 let score = 0;
 let goblinPosition = Math.floor(Math.random() * cells.length);
 let missed = 0;
-
 
 cells[goblinPosition].classList.add("goblin");
 
@@ -22,10 +21,10 @@ setInterval(() => {
   }
 
   cells[randomCell].classList.add("goblin");
-  missed++;
-  console.log(missed + "missed");
-  if(missed === 5){
-    alert("Game over: Your score is " + score);
+  missed += 1;
+  console.log(`${missed}missed`);
+  if (missed === 5) {
+    alert(`Game over: Your score is ${score}`);
     missed = 0;
     score = 0;
   }
@@ -35,8 +34,8 @@ cells.forEach((cell) => {
   cell.addEventListener("click", () => {
     console.log(score);
     if (cell.classList.contains("goblin")) {
-      score++;
-      missed--;
+      score += 1;
+      missed -= 1;
       cell.classList.remove("goblin");
     }
   });
